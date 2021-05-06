@@ -24,6 +24,14 @@ SpreePaypalExpress = {
 }
 
 $(document).ready(function() {
+  var optionsContainer = document.querySelector('#payment-options')
+  var optionsUl = document.querySelector('#payment-method-fields')
+
+    if (optionsUl.getElementsByTagName('li').length > 1) {
+      optionsContainer.classList.remove('hidden')
+    }
+
+  console.log(options)
   SpreePaypalExpress.updateSaveAndContinueVisibility();
   paymentMethods = $('div[data-hook="checkout_payment_step"] input[type="radio"]').click(function (e) {
     SpreePaypalExpress.updateSaveAndContinueVisibility();
